@@ -1,0 +1,41 @@
+@startuml
+' UML for Shop Management
+skinparam classAttributeIconSize 0
+
+enum DeliveryType {
+  delivery
+  pickup
+}
+
+class Product {
+  - id: String
+  - name: String
+  - price: double
+}
+
+class OrderItem {
+  - product: Product
+  - quantity: int
+  + subtotal(): double
+}
+
+class Address {
+  - street: String
+  - city: String
+  - zip: String
+}
+
+class Order {
+  - id: String
+  - items: List<OrderItem>
+  - deliveryType: DeliveryType
+  - address: Address?
+  + total(): double
+}
+
+Order "1" *-- "1..*" OrderItem : contains
+OrderItem "1" --> "1" Product : references
+Order "1" --> "0..1" Address : deliveredTo
+Order "1" ..> DeliveryType : uses
+
+@enduml

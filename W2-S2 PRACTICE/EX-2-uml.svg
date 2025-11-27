@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- Bank class box -->
+  <rect x="40" y="30" width="360" height="140" rx="6" fill="#f0f8ff" stroke="#333" />
+  <text x="220" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Bank</text>
+  <line x1="60" y1="70" x2="380" y2="70" stroke="#333"/>
+  <text x="60" y="92" font-family="Consolas, monospace" font-size="14">- name: String</text>
+  <text x="60" y="112" font-family="Consolas, monospace" font-size="14">- _accounts: List&lt;BankAccount&gt;</text>
+  <text x="60" y="132" font-family="Consolas, monospace" font-size="14">+ createAccount(id, owner): BankAccount</text>
+  <text x="60" y="152" font-family="Consolas, monospace" font-size="14">+ getAccount(id): BankAccount?</text>
+
+  <!-- BankAccount class box -->
+  <rect x="500" y="30" width="360" height="160" rx="6" fill="#fff8dc" stroke="#333" />
+  <text x="680" y="58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">BankAccount</text>
+  <line x1="520" y1="70" x2="840" y2="70" stroke="#333"/>
+  <text x="520" y="92" font-family="Consolas, monospace" font-size="14">- accountId: int</text>
+  <text x="520" y="112" font-family="Consolas, monospace" font-size="14">- accountOwner: String</text>
+  <text x="520" y="132" font-family="Consolas, monospace" font-size="14">- _balance: double</text>
+  <text x="520" y="152" font-family="Consolas, monospace" font-size="14">+ balance(): double</text>
+  <text x="520" y="172" font-family="Consolas, monospace" font-size="14">+ withdraw(amount): void</text>
+  <text x="520" y="192" font-family="Consolas, monospace" font-size="14">+ credit(amount): void</text>
+
+  <!-- Relationship line and multiplicities -->
+  <line x1="400" y1="100" x2="500" y2="100" stroke="#333" marker-end="url(#arrow)" />
+  <text x="360" y="95" font-family="Consolas, monospace" font-size="14">1</text>
+  <text x="540" y="95" font-family="Consolas, monospace" font-size="14">*</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Caption -->
+  <text x="40" y="380" font-family="Arial, Helvetica, sans-serif" font-size="12">Relationship: Bank composes/manages BankAccount (composition: Bank creates and owns BankAccount instances)</text>
+</svg>
