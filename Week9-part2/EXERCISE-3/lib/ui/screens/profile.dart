@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../data/profile_data.dart';
 import '../../model/profile_tile_model.dart';
 import '../theme/theme.dart';
 

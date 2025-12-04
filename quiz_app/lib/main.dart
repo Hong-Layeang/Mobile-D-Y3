@@ -10,7 +10,7 @@ void main() {
 }
 
 class QuizApp extends StatefulWidget {
-  const QuizApp({Key? key}) : super(key: key);
+  const QuizApp({super.key});
 
   @override
   State<QuizApp> createState() => _QuizAppState();

@@ -43,28 +43,28 @@ class SeasonsScreen extends StatelessWidget {
               border: Border.all(color: Colors.grey, width: 2),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Row(
+            child: const Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
+                Icon(
                   Icons.person,
                   size: 50,
                 ),
-                const SizedBox(width: 40),
+                SizedBox(width: 40),
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text(
+                    Text(
                       'SEASONS',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     Row(
-                      children: const [
+                      children: [
                         SeasonCard(
                           country: 'FRANCE',
                           seasonImages: [

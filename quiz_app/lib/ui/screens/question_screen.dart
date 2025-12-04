@@ -9,12 +9,12 @@ class QuestionScreen extends StatelessWidget {
   final void Function(String) onAnswerSelected;
 
   const QuestionScreen({
-    Key? key,
+    super.key,
     required this.question,
     required this.questionIndex,
     required this.totalQuestions,
     required this.onAnswerSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

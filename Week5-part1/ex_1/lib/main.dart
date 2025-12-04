@@ -50,11 +50,11 @@ class HobbyCard extends StatelessWidget {
   final Color color;
 
   const HobbyCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     this.color = Colors.blue,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

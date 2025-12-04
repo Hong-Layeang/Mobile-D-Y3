@@ -6,11 +6,11 @@ class QuestionCard extends StatelessWidget {
   final void Function(String) onChoiceSelected;
 
   const QuestionCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.choices,
     required this.onChoiceSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

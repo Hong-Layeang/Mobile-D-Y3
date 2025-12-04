@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
             width: 420,
             color: Colors.grey[300],
             padding: const EdgeInsets.all(16.0),
-            child: Center(
-                child: const SizedBox(
+            child: const Center(
+                child: SizedBox(
                   width: 360,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -53,8 +53,8 @@ class CustomCard extends StatelessWidget {
     required this.text,
     this.color,
     this.gradientColors,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

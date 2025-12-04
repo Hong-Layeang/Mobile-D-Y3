@@ -36,8 +36,8 @@ class FavoriteCardsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           FavoriteCard(
             title: 'title',
             description: 'description',

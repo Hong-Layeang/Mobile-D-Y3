@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
 // ExpenseItem widget
 class ExpenseItem extends StatelessWidget {
   final Expense expense;
-  ExpenseItem(this.expense);
+  const ExpenseItem(this.expense, {super.key});
 
   IconData getCategoryIcon(String category) {
     switch (category) {
@@ -111,13 +111,13 @@ class ExpenseItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(expense.title, style: TextStyle(fontWeight: FontWeight.bold)),
+                Text(expense.title, style: const TextStyle(fontWeight: FontWeight.bold)),
                 Text('\$${expense.amount.toStringAsFixed(2)}'),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Icon(getCategoryIcon(expense.category)),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Text(DateFormat.yMd().format(expense.date)),
           ],
         ),
@@ -128,6 +128,8 @@ class ExpenseItem extends StatelessWidget {
 
 // Expenses widget
 class Expenses extends StatelessWidget {
+  const Expenses({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

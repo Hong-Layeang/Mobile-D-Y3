@@ -3,7 +3,7 @@ import '../widgets/app_button.dart';
 
 class StartScreen extends StatelessWidget {
   final VoidCallback onStart;
-  const StartScreen({Key? key, required this.onStart}) : super(key: key);
+  const StartScreen({super.key, required this.onStart});
 
   @override
   Widget build(BuildContext context) {

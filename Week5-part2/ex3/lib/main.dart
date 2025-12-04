@@ -35,20 +35,20 @@ class MyApp extends StatelessWidget {
           // ensure this container fills the scaffold body so Column's
           // Expanded children get bounded height constraints
           height: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
+          child: const Padding(
+            padding: EdgeInsets.all(12.0),
             child: Column(
               children: [
                 Expanded(
-                  child: const ProductCard(product: Product.dart),
+                  child: ProductCard(product: Product.dart),
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12),
                 Expanded(
-                  child: const ProductCard(product: Product.flutter),
+                  child: ProductCard(product: Product.flutter),
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12),
                 Expanded(
-                  child: const ProductCard(product: Product.firebase),
+                  child: ProductCard(product: Product.firebase),
                 ),
               ],
             ),

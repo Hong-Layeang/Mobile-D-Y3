@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
             width: 420,
             color: Colors.grey[300],
             padding: const EdgeInsets.all(16.0),
-            child: Center(
-                child: const SizedBox(
+            child: const Center(
+                child: SizedBox(
                   width: 360,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

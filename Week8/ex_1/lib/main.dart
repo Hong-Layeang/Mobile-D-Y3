@@ -5,10 +5,10 @@ void main() => runApp(MaterialApp(
         appBar: AppBar(
           title: const Text("Custom buttons"),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               SelectableButton(),
               SizedBox(height: 20),
               SelectableButton(),
@@ -23,7 +23,7 @@ void main() => runApp(MaterialApp(
     ));
 
 class SelectableButton extends StatefulWidget {
-  const SelectableButton({Key? key}) : super(key: key);
+  const SelectableButton({super.key});
 
   @override
   State<SelectableButton> createState() => _SelectableButtonState();

@@ -8,11 +8,11 @@ class ResultScreen extends StatelessWidget {
   final VoidCallback onRestart;
 
   const ResultScreen({
-    Key? key,
+    super.key,
     required this.questions,
     required this.answers,
     required this.onRestart,
-  }) : super(key: key);
+  });
 
   int get score {
     int correct = 0;
