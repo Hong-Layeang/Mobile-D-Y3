@@ -1,10 +1,8 @@
-import '../../../Week11/ex1/lib/widgets/drawer.dart';
 import 'package:flutter/material.dart';
-import 'ui/groceries/grocery_list.dart';
-
+ 
+import 'ui/home.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 
@@ -16,16 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Groceries',
+      title: 'CADT LMS',
       theme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 147, 229, 250),
+          seedColor: const Color.fromARGB(255, 252, 4, 252),
           brightness: Brightness.dark,
           surface: const Color.fromARGB(255, 42, 51, 59),
         ),
         scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
       ),
-      home: const GroceryList(),
+      home: const Home(),
     );
   }
 }

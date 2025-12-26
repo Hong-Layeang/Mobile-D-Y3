@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../data/mock_grocery_repository.dart';
 import '../../models/grocery.dart';
 import 'grocery_form.dart';
@@ -12,18 +11,13 @@ class GroceryList extends StatefulWidget {
 }
 
 class _GroceryListState extends State<GroceryList> {
-  late List<Grocery> _groceryItems = List.from(dummyGroceryItems);
 
   void onCreate() async {
-    final newGrocery = await Navigator.of(context).push<Grocery>(
-      MaterialPageRoute(
-        builder: (context) => const NewItem(),
-      ),
-    );
-
+    // 4 - Navigate to the form screen using the Navigator push
+    Grocery? newGrocery =  await Navigator.push<Grocery>(context, MaterialPageRoute(builder: (context) => const GroceryForm()),);
     if (newGrocery != null) {
       setState(() {
-        _groceryItems.add(newGrocery);
+        dummyGroceryItems.add(newGrocery);
       });
     }
   }
@@ -32,11 +26,12 @@ class _GroceryListState extends State<GroceryList> {
   Widget build(BuildContext context) {
     Widget content = const Center(child: Text('No items added yet.'));
 
-    if (_groceryItems.isNotEmpty) {
-      //  Display groceries with an Item builder and  LIst Tile
+    if (dummyGroceryItems.isNotEmpty) {
+      //  1 - Display groceries with an Item builder and  LIst Tile
       content = ListView.builder(
-        itemCount: _groceryItems.length,
-        itemBuilder: (context, index) => GroceryItem(grocery: _groceryItems[index],),
+        itemCount: dummyGroceryItems.length,
+        itemBuilder: (context, index) =>
+            GroceryTile(grocery: dummyGroceryItems[index]),
       );
     }
 
@@ -50,15 +45,16 @@ class _GroceryListState extends State<GroceryList> {
   }
 }
 
-class GroceryItem extends StatelessWidget {
-  const GroceryItem({super.key, required this.grocery});
+class GroceryTile extends StatelessWidget {
+  const GroceryTile({super.key, required this.grocery});
 
   final Grocery grocery;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Container(color: grocery.category.color, width: 15, height: 15,),
+    //  2 - Display groceries with an Item builder and  LIst Tile
+    return  ListTile(
+      leading: Container(width: 15, height: 15, color:grocery.category.color,),
       title: Text(grocery.name),
       trailing: Text(grocery.quantity.toString()),
     );
